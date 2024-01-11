@@ -1,0 +1,20 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="ksuite Logos/Mail">
+        <g id="logo">
+            <path id="Rectangle Copy 15" opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M16.5555 8.06736C16.5555 6.67738 17.9299 5.68399 19.2875 6.09277L42.5097 13.0852C43.3955 13.3519 44 14.1528 44 15.0598V34.4952C44 35.8852 42.6256 36.8785 41.268 36.4698L18.0458 29.4773C17.16 29.2106 16.5555 28.4097 16.5555 27.5027V8.06736Z" fill="#FF9ABF"/>
+            <path id="Rectangle Copy 10" opacity="0.8" fill-rule="evenodd" clip-rule="evenodd" d="M11.2778 11.3729C11.2778 9.98292 12.6522 8.98953 14.0097 9.39831L37.232 16.3908C38.1178 16.6575 38.7222 17.4584 38.7222 18.3654V37.8007C38.7222 39.1907 37.3478 40.1841 35.9903 39.7753L12.768 32.7829C11.8822 32.5161 11.2778 31.7152 11.2778 30.8083V11.3729Z" fill="#F789B2"/>
+            <path id="Rectangle" fill-rule="evenodd" clip-rule="evenodd" d="M6 15.5048C6 14.1148 7.3744 13.1214 8.73196 13.5302L31.9542 20.5227C32.84 20.7894 33.4444 21.5903 33.4444 22.4972V41.9326C33.4444 43.3226 32.07 44.316 30.7125 43.9072L7.49026 36.9148C6.60446 36.648 6 35.8471 6 34.9402V15.5048Z" fill="#FF5B97"/>
+            <mask id="mask0_0_10453" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="6" y="13" width="28" height="31">
+                <path id="Rectangle_2" fill-rule="evenodd" clip-rule="evenodd" d="M6 15.5048C6 14.1148 7.3744 13.1214 8.73196 13.5302L31.9542 20.5227C32.84 20.7894 33.4444 21.5903 33.4444 22.4972V41.9326C33.4444 43.3226 32.07 44.316 30.7125 43.9072L7.49026 36.9148C6.60446 36.648 6 35.8471 6 34.9402V15.5048Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask0_0_10453)">
+                <g id="Rectangle Copy 9" style="mix-blend-mode:multiply">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6 12.7076L33.4444 20.9714L19.6452 33.0023C18.615 33.9006 16.9956 33.606 16.364 32.4055L6 12.7076Z" fill="#F2357A"/>
+                </g>
+                <g id="Rectangle Copy 17" style="mix-blend-mode:multiply">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6 12.7076L33.4444 20.9714L19.6452 33.0023C18.615 33.9006 16.9956 33.606 16.364 32.4055L6 12.7076Z" fill="#F2357A"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

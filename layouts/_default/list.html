@@ -1,0 +1,44 @@
+
+{{ define "main" }}
+    <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ .Title }}</h1>
+    <ul role="list"
+        class="mt-20 grid gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none xl:grid-cols-8 sm:grid-cols-2 md:grid-cols-4">
+        {{ range .Paginator.Pages }}
+            <li class="hover:border-gray-500">
+                <a href="{{ .RelPermalink }}" class="hover:border-gray-500">
+                    {{ if .Page.Params.Image}}
+                        <img class="h-16 w-16 rounded-2xl object-contain"
+                             src="/img/content/{{.Page.Params.Image}}"
+                             alt="{{.Page.Params.Image}}">
+                    {{ else }}
+                        <img class="h-16 w-16 rounded-2xl object-contain"
+                             src="/img/icons/documents.svg"
+                             alt="{{.Page.Params.Image}}">
+                    {{ end }}
+
+
+                    <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight">
+                        {{.Page.Params.Title}}
+                    </h3>
+                </a>
+
+                <ul role="list" class="mt-6">
+                    <li>
+                        {{ $path := "" }}
+                        {{ with .File }}
+                            {{ $path = .Path }}
+                        {{ else }}
+                            {{ $path = .Path }}
+                        {{ end }}
+
+                        <a href="{{ .Site.Params.Github }}{{ $path }}" target="_blank">
+                            <button class="block px-3 py-1 text-sm leading-6 bg-indigo-400 text-white font-bold">
+                                Edit
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        {{ end }}
+    </ul>
+{{ end }}

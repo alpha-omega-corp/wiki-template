@@ -1,0 +1,12 @@
+{{ $id := printf "codeblock-%d" .Ordinal }}
+
+<div id="{{ $id }}" class="highlight overflow-y-auto max-w-5xl rounded-lg">{{- /**/ -}}
+    <pre tabindex="0" class="rounded-lg px-4 py-4">{{- /**/ -}}
+        <code class="language-{{.Type}}" data-lang="{{.Type}}">{{- /**/ -}}
+          {{ $result := transform.HighlightCodeBlock . }}{{- /**/ -}}
+          {{ $result.Inner }}{{- /**/ -}}
+        </code>{{- /**/ -}}
+    </pre>{{- /**/ -}}
+</div>{{- /**/ -}}
+
+

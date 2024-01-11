@@ -1,0 +1,32 @@
+{{$currentPage := .}}
+
+{{ $currentPage }}
+<div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col fixed inset-0 bg-gray-900">
+    <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-800 px-6">
+        <nav class="flex flex-1 flex-col mt-8">
+            <ul role="list" class="-mx-2 space-y-1">
+                {{ range .Site.Menus.main }}
+                    <li>
+                        <a href="{{.URL}}"
+                                {{ if or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .) }}
+                                        class="bg-indigo-500 text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-bold"
+                                {{ end }}
+
+                           class="text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-bold">
+                            <svg class="h-6 w-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"/>
+                            </svg>
+                            {{ $text := print .Name | safeHTML }}
+                            {{ $text }}
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+    <div class="absolute inset-x-0 bottom-0 h-16">
+        {{ partial "links" . }}
+    </div>
+</div>

@@ -1,0 +1,10 @@
+
+<div class="ml-8">
+    <div class="grid grid-cols-8">
+        {{ range .Site.Params.links }}
+            <a href="{{.url}}" target="_blank">
+                <img src="/img/links/{{.img}}" alt="{{.name}}" width="32px" height="32px">
+            </a>
+        {{ end }}
+    </div>
+</div>
