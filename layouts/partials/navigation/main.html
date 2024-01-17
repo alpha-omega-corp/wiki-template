@@ -1,0 +1,39 @@
+{{$currentPage := .}}
+
+<div class="navigation">
+    <div class="flex flex-column">
+        {{ range .Site.Menus.main }}
+        <li>
+            <i class="bi bi-folder"></i>
+            <a href="{{.URL}}"
+                    {{ if or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .) }}
+                       class="text-primary"
+                    {{ end }}
+
+               class="text-black">
+
+
+                {{ $text := print .Name | safeHTML }}
+                {{ $text }}
+            </a>
+
+            {{ if ($currentPage.IsMenuCurrent "main" .) }}
+
+                    {{ range .Children }}
+                            <i class="bi bi-folder"></i>
+                            <a href="{{.URL}}"
+                                {{ if or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .) }}
+                                    class="text-primary"
+                                {{ end }}
+                                class="text-black">
+                                {{ $text := print .Name | safeHTML }}
+                                {{ $text }}
+                            </a>
+                    {{ end }}
+            {{ end }}
+        </li>
+        {{ end }}
+    </div>
+</div>
+
+

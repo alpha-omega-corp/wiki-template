@@ -23,10 +23,10 @@ function bisector(f) {
   let compare1, compare2, delta;
 
   // If an accessor is specified, promote it to a comparator. In this case we
-  // can test whether the search value is (self-) comparable. We can’t do this
+  // can tools whether the search value is (self-) comparable. We can’t do this
   // for a comparator (except for specific, known comparators) because we can’t
   // tell if the comparator is symmetric, and an asymmetric comparator can’t be
-  // used to test whether a single value is comparable.
+  // used to tools whether a single value is comparable.
   if (f.length !== 2) {
     compare1 = ascending$3;
     compare2 = (d, x) => ascending$3(f(d), x);
@@ -1239,7 +1239,7 @@ function zip() {
 }
 
 function every(values, test) {
-  if (typeof test !== "function") throw new TypeError("test is not a function");
+  if (typeof test !== "function") throw new TypeError("tools is not a function");
   let index = -1;
   for (const value of values) {
     if (!test(value, ++index, values)) {
@@ -1250,7 +1250,7 @@ function every(values, test) {
 }
 
 function some(values, test) {
-  if (typeof test !== "function") throw new TypeError("test is not a function");
+  if (typeof test !== "function") throw new TypeError("tools is not a function");
   let index = -1;
   for (const value of values) {
     if (test(value, ++index, values)) {
@@ -1261,7 +1261,7 @@ function some(values, test) {
 }
 
 function filter$1(values, test) {
-  if (typeof test !== "function") throw new TypeError("test is not a function");
+  if (typeof test !== "function") throw new TypeError("tools is not a function");
   const array = [];
   let index = -1;
   for (const value of values) {
@@ -2701,7 +2701,7 @@ DragEvent.prototype.on = function() {
   return value === this._ ? this : value;
 };
 
-// Ignore right-click, since that should open the context menu.
+// Ignore right-click, since that should open the context navigation.
 function defaultFilter$2(event) {
   return !event.ctrlKey && !event.button;
 }
@@ -5390,7 +5390,7 @@ function type(t) {
   return {type: t};
 }
 
-// Ignore right-click, since that should open the context menu.
+// Ignore right-click, since that should open the context navigation.
 function defaultFilter$1(event) {
   return !event.ctrlKey && !event.button;
 }
@@ -7228,7 +7228,7 @@ class Delaunator {
                 n = q;
             }
 
-            // walk backward from the other side, adding more triangles and flipping
+            // walk backward from the other utils, adding more triangles and flipping
             if (e === start) {
                 while (q = hullPrev[e], orient2d(x, y, coords[2 * q], coords[2 * q + 1], coords[2 * e], coords[2 * e + 1]) < 0) {
                     t = this._addTriangle(q, i, e, -1, hullTri[e], hullTri[q]);
@@ -7320,7 +7320,7 @@ class Delaunator {
 
                 const hbl = halfedges[bl];
 
-                // edge swapped on the other side of the hull (rare); fix the halfedge reference
+                // edge swapped on the other utils of the hull (rare); fix the halfedge reference
                 if (hbl === -1) {
                     let e = this._hullStart;
                     do {
@@ -10668,7 +10668,7 @@ function polygonContains(polygon, point) {
       sum.add(atan2$1(k * sign * sin$1(absDelta), cosPhi0 * cosPhi1 + k * cos$1(absDelta)));
       angle += antimeridian ? delta + sign * tau$1 : delta;
 
-      // Are the longitudes either side of the point’s meridian (lambda),
+      // Are the longitudes either utils of the point’s meridian (lambda),
       // and are the latitudes smaller than the parallel (phi)?
       if (antimeridian ^ lambda0 >= lambda ^ lambda1 >= lambda) {
         var arc = cartesianCross(cartesian(point0), cartesian(point1));
@@ -10692,7 +10692,7 @@ function polygonContains(polygon, point) {
   //
   // Second, count the (signed) number of times a segment crosses a lambda
   // from the point to the South pole.  If it is zero, then the point is the
-  // same side as the South pole.
+  // same utils as the South pole.
 
   return (angle < -epsilon$1 || angle < epsilon$1 && sum < -epsilon2) ^ (winding & 1);
 }
@@ -19612,7 +19612,7 @@ function noevent(event) {
   event.stopImmediatePropagation();
 }
 
-// Ignore right-click, since that should open the context menu.
+// Ignore right-click, since that should open the context navigation.
 // except for pinch-to-zoom, which is sent as a wheel+ctrlKey event
 function defaultFilter(event) {
   return (!event.ctrlKey || event.type === 'wheel') && !event.button;

@@ -1,0 +1,12 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+$primary: $teal-500;
+
+$theme-colors: (
+        "primary": $primary,
+);
+
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap-icons/font/bootstrap-icons";

@@ -1,0 +1,26 @@
+@import "bootstrap";
+
+
+.navigation {
+    height: 100vh;
+    padding: 40px;
+    border-right: 1px solid $primary;
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+
+    li {
+        padding: 5px;
+        list-style-type: none;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.menu-list {
+    list-style-type: none;
+
+}

@@ -1,0 +1,22 @@
+{{$currentPage := .}}
+
+<nav class="flex flex-1 flex-col mt-8">
+    <ul role="list" class="-mx-2 space-y-1">
+        {{ range .Site.Menus.utils }}
+            <li>
+                <a href="{{.URL}}"
+                        {{ if or ($currentPage.HasMenuCurrent "utils" .) ($currentPage.IsMenuCurrent "utils" .) }}
+                            class="bg-indigo-500 text-black group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-bold"
+                        {{ end }}
+
+                   class="text-black group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-bold">
+
+                    {{ $text := print .Name | safeHTML }}
+                    {{ $text }}
+                </a>
+
+            </li>
+        {{ end }}
+    </ul>
+</nav>
+
