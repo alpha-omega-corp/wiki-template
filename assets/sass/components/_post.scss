@@ -1,0 +1,58 @@
+.app-post {
+    width: 100%;
+    overflow: scroll;
+
+    .app-post-header {
+        position: fixed;
+        background-color: $white;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 20px;
+        padding: 20px;
+        border-bottom: 1px solid $dark;
+
+        .app-post-image {
+            width: 40px;
+            height: 40px;
+        }
+
+        .app-post-title {
+            font-size: large;
+            font-family: $poppins;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+
+    .app-post-content {
+        padding: 40px;
+        margin-top: 60px;
+
+        .app-post-paragraph {
+            display: flex;
+            gap: 10px;
+            text-decoration: none;
+            color: $dark;
+
+            &:hover {
+                .post-paragraph-index {
+                    color: $primary;
+                }
+            }
+
+            .post-paragraph-index {
+                font-weight: bold;
+                color: $blue;
+            }
+        }
+
+        .app-post-sources {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}

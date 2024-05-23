@@ -1,0 +1,29 @@
+<div class="app-code">
+    {{ $isBashrc := .Get "bashrc" }}
+    {{ $lang := .Get "lang" }}
+    {{ $input := trim .Inner "\n\r" }}
+    {{ $opts := dict "lineNos" "table" "style" "dracula" }}
+
+    {{ if $isBashrc }}
+        {{ $lang = "bash" }}
+        <div class="app-code-bashrc">
+            <div>
+                <span>a.</span>
+                <code>
+                    nano ~/.bashrc
+                </code>
+            </div>
+
+            <div>
+                <span>b.</span>
+                <code>
+                    source ~/.bashrc
+                </code>
+            </div>
+        </div>
+    {{ end }}
+
+    <div class="app-code-highlight">
+        {{ transform.Highlight $input $lang $opts }}
+    </div>
+</div>

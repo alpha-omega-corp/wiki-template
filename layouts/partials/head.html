@@ -1,26 +1,26 @@
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
     {{ $opts := dict
-    "transpiler" "dartsass"
-    "targetPath" "css/app.css"
-    "enableSourceMap" true
-    "includePaths" (slice "node_modules")
+        "transpiler" "dartsass"
+        "targetPath" "css/app.css"
+        "enableSourceMap" true
+        "includePaths" (slice "node_modules")
     }}
 
     <!-- Styles -->
     {{ with resources.Get "sass/app.scss" | toCSS $opts | minify | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        <link crossorigin="anonymous" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" rel="stylesheet">
     {{ end }}
 
     <!-- Scripts -->
     {{ $jsOpts := dict "targetPath" "js/bootstrap.js" }}
     {{ $bootstrap := resources.Get "bootstrap/dist/js/bootstrap.bundle.js" | minify | fingerprint | js.Build $jsOpts }}
-    <script src="{{ $bootstrap.RelPermalink }}" defer></script>
+    <script defer src="{{ $bootstrap.RelPermalink }}"></script>
 
     {{- $jsBundle := resources.Get "js/app.js" | js.Build ( dict "minify" false ) | resources.Minify | fingerprint -}}
-    <script src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}" defer></script>
+    <script defer integrity="{{ $jsBundle.Data.Integrity }}" src="{{ $jsBundle.RelPermalink }}"></script>
 
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}

@@ -1,23 +1,16 @@
 {{ define "main" }}
-    <div class="flex justify-center">
-        <article class="markdown max-w-5xl w-full">
-            <div class="grid mb-6 mt-6">
-                <div class="text-center">
-                    {{ partial "pagination" . }}
 
-                    <div class="flex justify-center items-center mt-4">
-
-                        <img src="/img/content/{{.Params.image}}" alt="{{.Title}}" class="mt-2 w-8 h-8">
-                        <h1 class="ml-2">{{.Title}}</h1>
-                    </div>
-
-                </div>
-                <div class="mt-8">
-                    {{- .Content -}}
-                </div>
-            </div>
-        </article>
+<article class="app-post">
+    <div class="app-post-header">
+        <img alt="{{.Title}}" class="app-post-image" src="/images/posts/{{.Params.image}}"/>
+        <h1 class="app-post-title">{{.Title}}</h1>
     </div>
+
+    <div class="app-post-content">
+        {{ .Content }}
+    </div>
+</article>
+
 {{ end }}
 
 

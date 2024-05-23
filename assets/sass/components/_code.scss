@@ -1,0 +1,30 @@
+.app-code {
+
+    .app-code-highlight {
+        .highlight {
+                border-radius: 10px;
+                overflow: hidden;
+                margin-bottom: 30px;
+        }
+    }
+
+    pre {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .app-code-bashrc {
+        padding: 0 0 20px;
+        display: flex;
+        gap: 10px;
+
+        span {
+            font-weight: bold;
+        }
+
+        code {
+            padding: 10px;
+        }
+    }
+
+}

@@ -1,0 +1,23 @@
+<div class="accordion" id="accordionSources">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button aria-controls="collapseSources"
+                    aria-expanded="false"
+                    class="accordion-button collapsed"
+                    data-bs-target="#collapseSources"
+                    data-bs-toggle="collapse"
+                    type="button">
+                Sources
+            </button>
+        </h2>
+        <div class="accordion-collapse collapse" data-bs-parent="#accordionSources" id="collapseSources">
+            <div class="accordion-body">
+                <div class="nav-item-body">
+                    <div class="app-post-sources">
+                        {{ .Inner }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

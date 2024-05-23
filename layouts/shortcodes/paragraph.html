@@ -1,0 +1,7 @@
+{{ $index := .Get "index" }}
+
+<a class="app-post-paragraph" href="#{{ $index }}">
+    <span class="post-paragraph-index">{{ $index }}#</span>
+
+    <p id="{{ $index }}">{{ .Inner }}</p>
+</a>

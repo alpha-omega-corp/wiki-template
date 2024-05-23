@@ -1,12 +1,27 @@
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 
-$primary: $teal-500;
+@font-face {
+    font-family: 'Poppins';
+    src: url("/fonts/Poppins.ttf");
+}
+
+$primary: $purple-600;
+$light: $gray-300;
+$poppins: 'Poppins', sans-serif;
 
 $theme-colors: (
-        "primary": $primary,
+    "primary": $primary,
 );
 
+
+$accordion-icon-active-color: #ffffff;
+$accordion-button-focus-box-shadow: none;
+$accordion-button-active-bg: $white;
+$accordion-button-bg: $white;
+
+$accordion-border-radius: 0;
+$accordion-button-icon: url("/images/plus-small.svg");
+$accordion-button-active-icon: url("/images/minus-small.svg");
+
 @import "bootstrap/scss/bootstrap";
-@import "bootstrap/scss/offcanvas";
-@import "bootstrap-icons/font/bootstrap-icons";

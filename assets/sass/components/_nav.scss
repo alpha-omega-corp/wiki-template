@@ -1,0 +1,49 @@
+
+.navigation {
+    width: 250px;
+    border-right: 1px solid $dark;
+
+    .accordion-button {
+        border-radius: 0 !important;
+        text-transform: uppercase;
+        font-family: $poppins;
+    }
+
+    .accordion-body {
+        border-top: 1px solid $primary;
+        padding: 0 0 20px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+
+    .nav-item-body {
+        display: flex;
+        flex-direction: column;
+
+        .nav-item {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: small;
+            padding: 20px;
+            padding-left: 40px;
+            border-bottom: 1px solid $light;
+        }
+
+        .nav-child-section {
+            padding-left: 40px;
+            font-size: small;
+            color: $blue;
+        }
+
+        .nav-child-item {
+            padding-left: 60px;
+        }
+
+        .nav-item-active {
+            color: $primary;
+            font-weight: bold;
+        }
+    }
+}

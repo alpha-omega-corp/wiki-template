@@ -2,6 +2,8 @@ name: alphomega
 description: Wiki Theme
 min_version: 0.41.0
 
+pygmentsStyle: base16-snazzy
+
 author:
   name: alpha-omega-corp
 

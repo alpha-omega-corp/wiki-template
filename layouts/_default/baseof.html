@@ -6,15 +6,13 @@
 
 <body>
 
-<div class="d-flex">
+<div class="app-content">
     {{ partial "navigation/main" . }}
 
     {{ if .IsHome }}
         {{ partial "home" . }}
     {{ else }}
-        <main>
-            {{ template "main" . }}
-        </main>
+        {{ template "main" . }}
     {{ end }}
 </div>
 
