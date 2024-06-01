@@ -6,6 +6,8 @@
 
     {{ if $isBashrc }}
         {{ $lang = "bash" }}
+        {{ $index := .Get "index" }}
+
         <div class="app-code-bashrc">
             <div>
                 <span>a.</span>

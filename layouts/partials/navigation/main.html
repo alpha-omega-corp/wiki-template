@@ -4,28 +4,28 @@
         <div class="accordion" id="accordionMenu">
             {{ range .Site.Menus.main }}
 
-            {{$current := print .Name | safeHTML}}
+                {{ $current := print .Name | safeHTML }}
 
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button aria-controls="collapse{{$current}}"
-                            aria-expanded="false"
-                            class="accordion-button collapsed"
-                            data-bs-target="#{{$current}}"
-                            data-bs-toggle="collapse"
-                            id="menuButton_{{$current}}"
-                            type="button">
-                        {{ $current }}
-                    </button>
-                </h2>
-                <div class="accordion-collapse collapse" data-bs-parent="#accordionMenu" id="{{$current}}">
-                    <div class="accordion-body">
-                        <div class="nav-item-body">
-                            {{ partial "navigation/child" . }}
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button aria-controls="collapse{{ $current }}"
+                                aria-expanded="false"
+                                class="accordion-button collapsed"
+                                data-bs-target="#{{ $current }}"
+                                data-bs-toggle="collapse"
+                                id="menuButton_{{ $current }}"
+                                type="button">
+                            {{ $current }}
+                        </button>
+                    </h2>
+                    <div class="accordion-collapse collapse" data-bs-parent="#accordionMenu" id="{{ $current }}">
+                        <div class="accordion-body">
+                            <div class="nav-item-body">
+                                {{ partial "navigation/child" . }}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             {{ end }}
 
         </div>

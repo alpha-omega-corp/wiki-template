@@ -1,39 +1,40 @@
-{{ range .Children}}
-{{ $isSection := .HasChildren }}
+{{ range .Children }}
+    {{ $isSection := .HasChildren }}
+    {{ $current := print .Name | safeHTML }}
+    {{ $current = replace $current "/" "" }}
 
-{{ if $isSection }}
-{{$current := print .Name | safeHTML}}
-{{ $current = replace $current "/" "" }}
+    {{ if $isSection }}
 
-<div class="accordion" id="accordionMenuChild{{$current}}">
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button aria-controls="collapse{{$current}}"
-                    aria-expanded="false"
-                    class="accordion-button nav-child-section"
-                    data-bs-target="#child{{$current}}"
-                    data-bs-toggle="collapse"
-                    id="menuButtonChild_{{$current}}"
-                    type="button">
+        <div class="accordion" id="accordionMenuChild{{ $current }}">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button aria-controls="collapse{{ $current }}"
+                            aria-expanded="false"
+                            class="accordion-button nav-child-section"
+                            data-bs-target="#child{{ $current }}"
+                            data-bs-toggle="collapse"
+                            id="menuButtonChild_{{ $current }}"
+                            type="button">
 
-                {{ .Title }}
+                        {{ .Title }}
 
-            </button>
-        </h2>
-        <div class="accordion-collapse collapse" data-bs-parent="#accordionMenuChild{{$current}}" id="child{{$current}}">
-            <div class="accordion-body">
-                <div class="nav-item-body">
-                    {{ partial "navigation/child" . }}
+                    </button>
+                </h2>
+                <div class="accordion-collapse collapse" data-bs-parent="#accordionMenuChild{{ $current }}"
+                     id="child{{ $current }}">
+                    <div class="accordion-body">
+                        <div class="nav-item-body">
+                            {{ partial "navigation/child" . }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-{{ else }}
-<a class="nav-item" href="{{.URL}}" id="menuItem_{{.Name}}">
-    {{ .Title }}
-</a>
-{{ end }}
+    {{ else }}
+        <a class="nav-item" href="{{ .URL }}" id="menuItem_{{ .URL }}">
+            {{ .Title }}
+        </a>
+    {{ end }}
 
 {{ end }}

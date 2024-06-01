@@ -1,15 +1,20 @@
 {{ define "main" }}
 
-<article class="app-post">
-    <div class="app-post-header">
-        <img alt="{{.Title}}" class="app-post-image" src="/images/posts/{{.Params.image}}"/>
-        <h1 class="app-post-title">{{.Title}}</h1>
-    </div>
+    {{ $image := .Params.image }}
 
-    <div class="app-post-content">
-        {{ .Content }}
-    </div>
-</article>
+    <article class="app-post">
+        <div class="app-post-header">
+            {{ if $image }}}
+                <img alt="{{ .Title }}" class="app-post-image" src="/images/posts/{{ $image }}"/>
+            {{ end }}
+
+            <h1 class="app-post-title">{{ .Title }}</h1>
+        </div>
+
+        <div class="app-post-content">
+            {{ .Content }}
+        </div>
+    </article>
 
 {{ end }}
 

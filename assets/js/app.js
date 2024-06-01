@@ -1,27 +1,22 @@
-let path = window.location.pathname.split('/');
-let currentMenu = path[1];
-let currentMenuItem = path[2];
-let currentMenuChildItem = path[3];
+let itemPath = window.location.pathname;
+let sectionPath = itemPath.split('/').filter(function (item) {
+    return item !== ""
+});
 
-// Navigation Controls
-let section = document.getElementById(`menuButton_${currentMenu}`);
-let sectionItem = document.getElementById(`menuItem_${currentMenuItem}`);
-let sectionChild = document.getElementById(`menuButtonChild_${currentMenuItem}`);
-let sectionChildItem = document.getElementById(`menuItemChild_${currentMenuChildItem}`);
+if (sectionPath.length > 0) {
+    for (let i = 0; i < sectionPath.length; i++) {
+        let menu = sectionPath[i];
 
-if (section) {
-    section.click();
-}
+        if (i === 0) {
+            document.getElementById(`menuButton_${menu}`).click();
+        } else {
+            let item = sectionPath.pop()
+            let current = sectionPath.join('')
 
-if (sectionItem) {
-    sectionItem.classList.add('nav-item-active');
-}
+            document.getElementById(`menuButtonChild_${current}`).click()
+            document.getElementById(`menuItem_${itemPath}`).classList.add('nav-item-active')
+        }
 
-if (sectionChildItem) {
-    sectionChildItem.classList.add('nav-item-active');
-}
-
-if (sectionChild) {
-    sectionChild.click();
+    }
 }
 
