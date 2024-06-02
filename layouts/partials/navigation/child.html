@@ -1,13 +1,22 @@
-{{ range .Children }}
-    {{ $isSection := .HasChildren }}
-    {{ $current := print .Name | safeHTML }}
-    {{ $current = replace $current "/" "" }}
+{{ $parent := print .Parent | safeHTML }}
+{{ $parentId := replace $parent "/" "" }}
 
-    {{ if $isSection }}
 
-        <div class="accordion" id="accordionMenuChild{{ $current }}">
+
+<div class="accordion" id="accordionMenuChild{{ $parentId }}">
+    {{ range .Children }}
+
+        {{ $currentParent := print .Parent | safeHTML }}
+        {{ $depth := split $currentParent "/" | len}}
+        {{ $padding := math.Product $depth 20}}
+
+        {{ $isSection := .HasChildren }}
+        {{ $current := print .Name | safeHTML }}
+        {{ $current = replace $current "/" "" }}
+
+        {{ if $isSection }}
             <div class="accordion-item">
-                <h2 class="accordion-header">
+                <h2 class="accordion-header" style="padding-left: {{$padding}}px">
                     <button aria-controls="collapse{{ $current }}"
                             aria-expanded="false"
                             class="accordion-button nav-child-section"
@@ -17,10 +26,9 @@
                             type="button">
 
                         {{ .Title }}
-
                     </button>
                 </h2>
-                <div class="accordion-collapse collapse" data-bs-parent="#accordionMenuChild{{ $current }}"
+                <div class="accordion-collapse collapse" data-bs-parent="#accordionMenuChild{{ $parentId }}"
                      id="child{{ $current }}">
                     <div class="accordion-body">
                         <div class="nav-item-body">
@@ -29,12 +37,15 @@
                     </div>
                 </div>
             </div>
-        </div>
+        {{ else }}
+            <div class="nav-item" style="padding-left: {{$padding}}px">
+                <li>
+                    <a  href="{{ .URL }}" id="menuItem_{{ .URL }}">
+                        {{ .Title }}
+                    </a>
+                </li>
 
-    {{ else }}
-        <a class="nav-item" href="{{ .URL }}" id="menuItem_{{ .URL }}">
-            {{ .Title }}
-        </a>
+            </div>
+        {{ end }}
     {{ end }}
-
-{{ end }}
+</div>

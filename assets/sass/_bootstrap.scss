@@ -6,21 +6,27 @@
     src: url("/fonts/Poppins.ttf");
 }
 
-$primary: $purple-600;
 $light: $gray-300;
+$purple: $purple-600;
+$primary: #1a43b2;
+
 $poppins: 'Poppins', sans-serif;
 
 $theme-colors: (
     "primary": $primary,
+    "light": $light,
+    "purple": $purple
 );
 
 
 $accordion-icon-active-color: #ffffff;
 $accordion-button-focus-box-shadow: none;
 $accordion-button-active-bg: $white;
+$accordion-button-active-color: $primary;
 $accordion-button-bg: $white;
-
+$accordion-border-width: 0;
 $accordion-border-radius: 0;
+
 $accordion-button-icon: url("/images/plus-small.svg");
 $accordion-button-active-icon: url("/images/minus-small.svg");
 

@@ -1,40 +1,52 @@
 
 .navigation {
-    width: 250px;
+    width: 300px;
     border-right: 1px solid $dark;
 
     .accordion-button {
         border-radius: 0 !important;
         text-transform: uppercase;
         font-family: $poppins;
+
+        &::after {
+            order: -1;
+            margin: 0 10px 0 0;
+        }
+    }
+
+    .main-accordion-body {
+        border-bottom: 1px solid $dark;
+        border-top: 1px solid $dark;
     }
 
     .accordion-body {
-        border-top: 1px solid $primary;
-        padding: 0 0 20px;
+        padding: 0;
     }
 
     @include media-breakpoint-down(sm) {
         display: none;
     }
 
-    .nav-item-body {
-        display: flex;
-        flex-direction: column;
 
         .nav-item {
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: small;
-            padding: 20px;
-            padding-left: 40px;
-            border-bottom: 1px solid $light;
+            padding: 16px 20px;
+            margin-left: 40px;
+
+            li::marker {
+                color: $purple;
+                font-size: large;
+            }
+
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: monospace;
+                color: $dark;
+            }
         }
 
         .nav-child-section {
-            padding-left: 40px;
-            font-size: small;
-            color: $blue;
+
         }
 
         .nav-child-item {
@@ -42,8 +54,9 @@
         }
 
         .nav-item-active {
-            color: $primary;
-            font-weight: bold;
+           span {
+               text-decoration: underline;
+           }
         }
-    }
+
 }
