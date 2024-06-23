@@ -1,11 +1,7 @@
-{{ $parent := print .Parent | safeHTML }}
-{{ $parentId := replace $parent "/" "" }}
+{{$ref := replace .PageRef "/" ""}}
 
-
-
-<div class="accordion" id="accordionMenuChild{{ $parentId }}">
+<div class="accordion" id="accordionMenuChild{{ $ref }}">
     {{ range .Children }}
-
         {{ $currentParent := print .Parent | safeHTML }}
         {{ $depth := split $currentParent "/" | len}}
         {{ $padding := math.Product $depth 20}}
@@ -19,7 +15,7 @@
                 <h2 class="accordion-header" style="padding-left: {{$padding}}px">
                     <button aria-controls="collapse{{ $current }}"
                             aria-expanded="false"
-                            class="accordion-button nav-child-section"
+                            class="accordion-button"
                             data-bs-target="#child{{ $current }}"
                             data-bs-toggle="collapse"
                             id="menuButtonChild_{{ $current }}"
@@ -28,7 +24,7 @@
                         {{ .Title }}
                     </button>
                 </h2>
-                <div class="accordion-collapse collapse" data-bs-parent="#accordionMenuChild{{ $parentId }}"
+                <div class="accordion-collapse collapse" data-bs-parent="#accordionMenuChild{{ $ref }}"
                      id="child{{ $current }}">
                     <div class="accordion-body">
                         <div class="nav-item-body">
@@ -38,13 +34,12 @@
                 </div>
             </div>
         {{ else }}
-            <div class="nav-item" style="padding-left: {{$padding}}px">
+            <div id="menuItem_{{ .URL }}" class="nav-item" style="padding-left: {{math.Add $padding 2}}px">
                 <li>
-                    <a  href="{{ .URL }}" id="menuItem_{{ .URL }}">
+                    <a href="{{ .URL }}">
                         {{ .Title }}
                     </a>
                 </li>
-
             </div>
         {{ end }}
     {{ end }}

@@ -1,62 +1,68 @@
-
 .navigation {
-    width: 300px;
-    border-right: 1px solid $dark;
+  width: 300px;
+  border-right: 1px solid $dark;
 
-    .accordion-button {
-        border-radius: 0 !important;
-        text-transform: uppercase;
-        font-family: $poppins;
+  .collapsing {
+    -webkit-transition: none;
+    transition: none;
+  }
 
-        &::after {
-            order: -1;
-            margin: 0 10px 0 0;
-        }
+  .accordion-button {
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    font-family: $poppins;
+
+    &::after {
+      order: -1;
+      margin: 0 10px 0 0;
+    }
+  }
+
+  .main-accordion-body {
+    border-bottom: 1px solid $dark;
+    border-top: 1px solid $dark;
+  }
+
+  .accordion-body {
+    padding: 0;
+  }
+
+
+  .nav-item {
+    padding: 16px 20px;
+    margin-left: 40px;
+
+    li::marker {
+      color: $purple;
+      font-size: large;
+
     }
 
-    .main-accordion-body {
-        border-bottom: 1px solid $dark;
-        border-top: 1px solid $dark;
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: monospace;
+      color: $dark;
+      margin-left: 10px;
+    }
+  }
+
+  .nav-child-item {
+    padding-left: 60px;
+  }
+
+  .nav-item-active {
+
+    a {
+      text-decoration: underline !important;
+      color: $purple;
     }
 
-    .accordion-body {
-        padding: 0;
-    }
-
-    @include media-breakpoint-down(sm) {
-        display: none;
-    }
+  }
 
 
-        .nav-item {
-            padding: 16px 20px;
-            margin-left: 40px;
-
-            li::marker {
-                color: $purple;
-                font-size: large;
-            }
-
-            a {
-                text-decoration: none;
-                text-transform: uppercase;
-                font-family: monospace;
-                color: $dark;
-            }
-        }
-
-        .nav-child-section {
-
-        }
-
-        .nav-child-item {
-            padding-left: 60px;
-        }
-
-        .nav-item-active {
-           span {
-               text-decoration: underline;
-           }
-        }
-
+  /* Responsive */
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
 }

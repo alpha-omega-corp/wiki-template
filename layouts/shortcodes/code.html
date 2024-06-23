@@ -8,24 +8,22 @@
         {{ $lang = "bash" }}
         {{ $index := .Get "index" }}
 
-        <div class="app-code-bashrc">
-            <div>
-                <span>a.</span>
-                <code>
-                    nano ~/.bashrc
-                </code>
-            </div>
+        <!-- nano -->
+        {{ partial "bash/bashrc" . }}
 
-            <div>
-                <span>b.</span>
-                <code>
-                    source ~/.bashrc
-                </code>
-            </div>
+        <div class="app-code-highlight">
+            <span class="language">{{ $lang }}</span>
+            <span class="code-highlight">{{ transform.Highlight $input $lang $opts }}</span>
         </div>
-    {{ end }}
+
+        <!-- source -->
+        {{ partial "bash/source" . }}
+
+    {{ else }}
 
     <div class="app-code-highlight">
-        {{ transform.Highlight $input $lang $opts }}
+        <span class="language">{{ $lang }}</span>
+        <span class="code-highlight">{{ transform.Highlight $input $lang $opts }}</span>
     </div>
+    {{end}}
 </div>
