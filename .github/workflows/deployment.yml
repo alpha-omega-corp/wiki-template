@@ -2,10 +2,10 @@ name: deployment
 on: [push]
 jobs:
   deploy:
-    name: Deploy
+    name: wiki-template
     runs-on: ubuntu-latest
     steps:
-      - name: deploy gateway application
+      - name: deploy wiki-template to production
         uses: appleboy/ssh-action@v1.0.0
         env:
           INPUT_PATH: ${{ secrets.APP_WIKI_TEMPLATE_PATH }}
