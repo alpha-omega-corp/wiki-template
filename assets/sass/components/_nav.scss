@@ -1,6 +1,28 @@
+.navigation-btn {
+  position: fixed;
+  display: block;
+  top: 10px;
+  left: 10px;
+
+  img {
+    width: 30px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
 .navigation {
-  width: 300px;
   border-right: 1px solid $dark;
+
+  .navigation-desktop {
+    width: 300px;
+  }
+
+  .offcanvas-body {
+    padding: 0;
+  }
 
   .collapsing {
     -webkit-transition: none;
@@ -60,9 +82,10 @@
 
   }
 
-
-  /* Responsive */
-  @include media-breakpoint-down(md) {
-    display: none;
+  .navigation-desktop {
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
   }
+
 }

@@ -1,7 +1,10 @@
 .app-post {
     overflow: scroll;
     width: 100%;
-    padding: 40px;
+    padding: 20px;
+    @include media-breakpoint-up(lg) {
+        padding: 40px;
+    }
 
     .app-post-requirements {
         display: flex;
@@ -27,6 +30,10 @@
         justify-content: start;
         gap: 20px;
 
+        @include media-breakpoint-down(lg) {
+            justify-content: center;
+        }
+
         .app-post-image {
             width: 40px;
             height: 40px;
@@ -38,13 +45,17 @@
             text-transform: uppercase;
             font-weight: bold;
             margin: 0;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 24px;
+            }
         }
     }
 
     .app-post-content {
 
-        @include media-breakpoint-down(md) {
-            padding: 20px;
+        @include media-breakpoint-down(lg) {
+            padding: 40px 0;
         }
 
         .app-post-paragraph {

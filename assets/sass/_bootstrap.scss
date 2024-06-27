@@ -26,8 +26,10 @@ $accordion-button-active-color: $primary;
 $accordion-button-bg: $white;
 $accordion-border-width: 0;
 $accordion-border-radius: 0;
-
 $accordion-button-icon: url("/images/plus-small.svg");
 $accordion-button-active-icon: url("/images/minus-small.svg");
+
+
+$offcanvas-horizontal-width: 270px;
 
 @import "bootstrap/scss/bootstrap";

@@ -1,33 +1,27 @@
+
+
+<button class="btn navigation-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample">
+    <img src="/images/menu.png" alt="hamburger">
+</button>
+
 <div class="navigation">
+    <div class="navigation-desktop">
+        {{ partial "navigation/navbar" .}}
+    </div>
 
-    <div class="d-flex flex-column">
-        <div class="accordion" id="accordionMenu">
-            {{ range .Site.Menus.main }}
-
-                {{ $current := print .Name | safeHTML }}
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button aria-controls="collapse{{ $current }}"
-                                aria-expanded="false"
-                                class="accordion-button collapsed"
-                                data-bs-target="#{{ $current }}"
-                                data-bs-toggle="collapse"
-                                id="menuButton_{{ $current }}"
-                                type="button">
-                            {{ $current }}
-                        </button>
-                    </h2>
-                    <div class="accordion-collapse collapse" data-bs-parent="#accordionMenu" id="{{ $current }}">
-                        <div class="accordion-body main-accordion-body">
-                            <div class="nav-item-body">
-                                {{ partial "navigation/child" .}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {{ end }}
-
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+         aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                DOCUMENTS
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                {{ partial "navigation/navbar" .}}
+            </div>
         </div>
     </div>
 </div>

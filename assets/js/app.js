@@ -9,7 +9,7 @@ if (sectionPath.length > 0) {
     document.getElementById(`menuButton_${sectionPath[0]}`).click();
     let menuItem = document.getElementById(`menuItem_${itemPath}`)
 
-    // Main navigation item open, start loop at index 1
+    // Main navigation item open
     if (sectionPath.length === 2) {
         menuItem.classList.add('nav-item-active')
     }
